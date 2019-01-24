@@ -26,7 +26,7 @@ describe('Given a shopping website', () => {
 
       await menuContentPage.goToTShirtMenu();
 
-      await productListPage.buyTshirt();
+      await productListPage.buyTshirt('Faded Short Sleeve T-shirts');
 
       await productAddedModalPage.goToCheckout();
 

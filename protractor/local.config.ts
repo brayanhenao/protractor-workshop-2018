@@ -3,9 +3,17 @@ import { Config, browser } from 'protractor';
 import { reporter } from './helper/reporter';
 
 export const config: Config = {
-  // capabilities: {
-  //   browserName: 'safari'
-  // },
+  capabilities: {
+    browserName: 'chrome',
+    chromeOptions: {
+      args: [
+        '--disable-popup-blocking',
+        '--no-default-browser-check',
+        '--window-size=800,600'
+      ],
+      prefs: { credentials_enable_service: false }
+    }
+  },
 
   framework: 'jasmine',
   specs: ['../test/**/*.spec.js'],

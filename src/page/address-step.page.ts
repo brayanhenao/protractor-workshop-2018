@@ -1,4 +1,4 @@
-import { $, ElementFinder } from 'protractor';
+import { $, ElementFinder, browser, ExpectedConditions } from 'protractor';
 
 export class AddressStepPage {
   private adressNextStepButton: ElementFinder;
@@ -8,6 +8,9 @@ export class AddressStepPage {
   }
 
   public async goToShipping(): Promise<void> {
+    await browser.wait(
+      ExpectedConditions.elementToBeClickable(this.adressNextStepButton)
+    );
     await this.adressNextStepButton.click();
   }
 }
